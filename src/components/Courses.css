@@ -1,0 +1,174 @@
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.course-card {
+  background: rgba(13, 35, 57, 0.5);
+  border: 1px solid rgba(65, 190, 223, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.course-card:hover {
+  border-color: rgba(65, 190, 223, 0.5);
+  box-shadow: 0 8px 30px rgba(65, 190, 223, 0.15);
+}
+
+.course-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.course-icon {
+  background: linear-gradient(135deg, #53deed 0%, #c2f5ff 100%);
+  padding: 12px;
+  border-radius: 10px;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.course-title h3 {
+  font-size: 20px;
+  color: #e2e8f0;
+  margin-bottom: 8px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.course-title h4 {
+  font-size: 16px;
+  color: #53deed;
+  font-weight: 500;
+}
+
+.course-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(65, 190, 223, 0.2);
+}
+
+.course-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.course-meta-item svg {
+  color: #53deed;
+}
+
+.course-description {
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.course-section h5 {
+  color: #e2e8f0;
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.course-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-badge {
+  background: rgba(65, 190, 223, 0.1);
+  color: #53deed;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(65, 190, 223, 0.3);
+}
+
+.course-hardware {
+  background: rgba(65, 190, 223, 0.05);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 3px solid #53deed;
+}
+
+.course-hardware h5 {
+  color: #e2e8f0;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.course-hardware p {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .courses-container {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-container {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card {
+    padding: 20px;
+  }
+
+  .course-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .course-title h3 {
+    font-size: 18px;
+  }
+
+  .course-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-card {
+    padding: 16px;
+  }
+
+  .course-title h3 {
+    font-size: 16px;
+  }
+
+  .course-title h4 {
+    font-size: 14px;
+  }
+
+  .course-description {
+    font-size: 14px;
+  }
+
+  .tech-badge {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}

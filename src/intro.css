@@ -1,0 +1,26 @@
+/* Keep the transparent portrait in front of the decorative seafoam layers. */
+.avatar-scene { isolation: isolate; }
+.avatar-scene::before, .orbital, .avatar-platform { z-index: 0; pointer-events: none; }
+.avatar-depth { z-index: 1; width: 100%; height: 100%; }
+.human-avatar { width: 100%; height: calc(100% - 20px); }
+.avatar-portrait { display: block; opacity: 1; visibility: visible; }
+.floating-chip, .scene-coordinate, .bubble { z-index: 2; pointer-events: none; }
+.welcome-screen { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 58px 22px 30px; position: relative; background: radial-gradient(ellipse at 50% 38%, #cce5d3a6, transparent 55%); }
+.welcome-brand { position: absolute; top: 25px; left: 35px; font-size: 20px; font-weight: 700; color: #29674e; }
+.welcome-brand span { font-size: 9px; font-weight: 500; letter-spacing: 2px; margin-left: 12px; vertical-align: middle; }
+.welcome-avatar { width: min(460px, 100%); flex-shrink: 0; animation: welcome-arrive .8s ease-out both; }
+.welcome-avatar .avatar-scene { height: clamp(285px, 49svh, 490px); margin: 0; }
+.welcome-avatar .scene-coordinate { display: none; }
+.welcome-avatar .chip-code { left: -28px; bottom: 55px; }
+.welcome-avatar .chip-stack { right: -12px; top: 90px; }
+.welcome-copy { text-align: center; position: relative; z-index: 3; margin-top: 20px; animation: welcome-arrive .8s .2s ease-out both; }
+.welcome-eyebrow { font-size: 10px; letter-spacing: 3px; color: #5d806b; margin-bottom: 12px; }
+.welcome-copy h1 { font-size: clamp(27px, 4vw, 45px); line-height: 1.15; font-weight: 600; letter-spacing: -1.5px; color: #204b37; }
+.welcome-role { color: #5d7867; font-size: 14px; margin-top: 12px; line-height: 1.6; }
+.welcome-button { cursor: pointer; border: 0; margin-top: 24px; padding: 17px 28px; font-size: 14px; }
+.welcome-hint { margin-top: 13px; color: #698471; font-size: 11px; letter-spacing: .5px; }
+.portfolio-reveal { animation: welcome-arrive .65s ease-out both; }
+#main-content:focus { outline: none; }
+@keyframes welcome-arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 540px) { .welcome-screen { padding-top: 70px; }.welcome-brand { left: 22px; }.welcome-avatar { max-width: 340px; }.welcome-avatar .chip-code { left: 0; font-size: 9px; padding: 10px; }.welcome-avatar .chip-stack { right: 0; top: 65px; padding: 10px; font-size: 8px; }.welcome-copy h1 { max-width: 340px; }.welcome-role { max-width: 290px; margin-left: auto; margin-right: auto; }.welcome-copy { margin-top: 15px; } }
+@media (prefers-reduced-motion: reduce) { .welcome-avatar, .welcome-copy, .portfolio-reveal { animation: none; } }
